@@ -181,8 +181,9 @@ class SapGui(object):
 
     def __init__(self):
 
-        self.path = r"C:\Program Files (x86)\SAP\FrontEnd\SapGui\saplogon.exe"
-        
+        # self.path = r"C:\Program Files (x86)\SAP\FrontEnd\SapGui\saplogon.exe"
+        # subprocess.Popen(self.path) # <--- abrir o SAP conforme caminho
+        self.path = r"C:\Program Files\SAP\FrontEnd\SAPGUI\saplogon.exe"
         subprocess.Popen(self.path) # <--- abrir o SAP conforme caminho
         
         time.sleep(2) # <---- Tempo de espera para abrir a janela do SAP Gui

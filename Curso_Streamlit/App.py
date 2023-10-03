@@ -23,7 +23,6 @@ df = pd.read_excel(
     usecols='A:J',
     nrows=4400
 )
-
 # -- Criar o sidebar
 with st.sidebar:
     logo_teste = Image.open('./Mídia/logo vizion.png')
