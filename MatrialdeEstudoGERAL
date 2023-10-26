@@ -1,0 +1,38 @@
+import pandas as pd
+
+# Converte os valores na coluna 'GANHO_DIARIO' para strings e aplica a função replace
+df_aplicacao['GANHO_DIARIO'] = df_aplicacao['GANHO_DIARIO'].astype(str).apply(lambda x: x.replace(".", "").replace(",", "."))
+
+# Substitui os valores que contêm apenas '.' por '0.0'
+df_aplicacao['GANHO_DIARIO'] = df_aplicacao['GANHO_DIARIO'].replace('.', '0.0')
+
+# Converte a coluna 'GANHO_DIARIO' para números (float), tratando valores inválidos como NaN
+df_aplicacao['GANHO_DIARIO'] = pd.to_numeric(df_aplicacao['GANHO_DIARIO'], errors='coerce')
+
+# Agora, a coluna 'GANHO_DIARIO' contém valores do tipo float ou NaN para valores inválidos
+_________________________________________________________________________________________________
+
+import pandas as pd
+
+# Supondo que seu DataFrame seja chamado de 'df'
+df['GANHO_DIARIO'] = pd.to_numeric(df['GANHO_DIARIO'], errors='coerce')
+
+# Agora a coluna 'GANHO_DIARIO' foi convertida para um tipo numérico
+_____________________________________________________________________________
+import pandas as pd
+
+# Criar um DataFrame de exemplo
+dados = {'coluna1': ['1,2', '3,4', '5,6'],
+         'coluna2': ['7,8', '9,10', '11,12']}
+
+df = pd.DataFrame(dados)
+
+# Substituir vírgulas por pontos e converter as colunas para tipo numérico
+df['coluna1'] = df['coluna1'].str.replace(',', '.').astype(float)
+df['coluna2'] = df['coluna2'].str.replace(',', '.').astype(float)
+
+# Exibir o DataFrame após a substituição
+print(df)
+________________________________________________________________________________________________________
+
+
